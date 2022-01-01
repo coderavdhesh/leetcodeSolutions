@@ -15,7 +15,7 @@ class Solution {
         {
             if(arr[i+1]-arr[i] == min)
             {
-                ansList.add(Arrays.asList(arr[i],arr[i+1]));// important line
+                ansList.add(Arrays.asList(arr[i],arr[i+1]));
             } 
         }
         
