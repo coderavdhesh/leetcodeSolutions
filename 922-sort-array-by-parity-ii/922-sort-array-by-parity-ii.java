@@ -5,7 +5,9 @@ class Solution {
         A[i] = A[j];
         A[j] = temp;
     }
-    public int[] sortArrayByParityII(int[] nums) {
+    
+    // here starting the pointers together in same direction
+    /*public int[] sortArrayByParityII(int[] nums) {
         int evenindex = 0;
         int oddindex = 1;
         
@@ -18,5 +20,23 @@ class Solution {
                 swap(nums,evenindex,oddindex);
         }
         return nums;
-    }
+    }*/
+    
+    // here pointer moving opposite ways one from start and one from end
+    public int[] sortArrayByParityII(int[] A) 
+    {
+        int evenIndex = 0;
+        int oddIndex = A.length - 1;
+        
+        while(evenIndex < A.length && oddIndex > 0)
+        {
+            if(evenIndex < A.length && oddIndex > 0)
+                swap(A, evenIndex, oddIndex);
+            
+            if(A[evenIndex] % 2 == 0) evenIndex += 2;
+            if(A[oddIndex] % 2 == 1)  oddIndex -= 2;
+        }
+        return A;
+    }    
+    
 }
