@@ -1,6 +1,12 @@
 class Solution {
     public String mergeAlternately(String word1, String word2) {
         
+        
+        // NOTE ::::::::
+        // here the Stringbilder is faster than the String method ;;;
+        // beCAUSE IT NOT CREATING NEW STRING AGIAN AND AGAIN
+        
+        
         // here the String builder used 
         int i=0, j=0, k=0;
         StringBuffer sb = new StringBuffer();
