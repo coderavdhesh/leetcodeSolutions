@@ -1,16 +1,24 @@
 class Solution {
     public String mergeAlternately(String word1, String word2) {
         
-        // int i=0, j=0, k=0;
-        // StringBuffer sb = new StringBuffer();
-        // while(i<word1.length() && j<word2.length())
-        //     if(k++%2==0) sb.append(word1.charAt(i++));
-        //     else sb.append(word2.charAt(j++));
-        // while(i<word1.length()) sb.append(word1.charAt(i++));
-        // while(j<word2.length()) sb.append(word2.charAt(j++));
-        // return sb.toString();
+        // here the String builder used 
+        int i=0, j=0, k=0;
+        StringBuffer sb = new StringBuffer();
+        while(i<word1.length() && j<word2.length())
+            if(k++%2==0) 
+                sb.append(word1.charAt(i++));
+            else 
+                sb.append(word2.charAt(j++));
+        while(i<word1.length()) 
+            sb.append(word1.charAt(i++));
+        while(j<word2.length()) 
+            sb.append(word2.charAt(j++));
         
-        String str = "";
+        return sb.toString();
+        
+        
+        // normal extra string use 
+        /*String str = "";
         int i =0, j=0;
         int k =0;
         while(i<word1.length() && j<word2.length())
@@ -28,6 +36,6 @@ class Solution {
             str += word2.charAt(j++) ;
         
         
-        return str;
+        return str;*/
     }
 }
