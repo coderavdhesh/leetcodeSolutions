@@ -1,4 +1,7 @@
 class Solution {
+    
+//     o(n) time o(1) space  \U0001f60e\U0001f609
+    
      public boolean isPalindrome(String s) {
          
         s=replaceAll(s);// replacing all non-alphanumeric characters
@@ -15,7 +18,7 @@ class Solution {
         return true; 
     }
     
-    public String replaceAll(String s){
+    public String replaceAll(String s){// only this is important 
         return s.replaceAll("[^a-zA-Z0-9]","").toLowerCase();
     }
     
