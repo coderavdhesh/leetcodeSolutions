@@ -3,7 +3,7 @@ class Solution {
         
         
         // NOTE ::::::::
-        // here the Stringbilder is faster than the String method ;;;
+        // here the Stringbilder is faster than the String method
         // beCAUSE IT NOT CREATING NEW STRING AGIAN AND AGAIN
         
         
