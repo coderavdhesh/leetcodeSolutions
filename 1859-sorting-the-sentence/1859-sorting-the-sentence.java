@@ -1,7 +1,8 @@
 class Solution {
     public String sortSentence(String s) {
+        
         int count =0 ;
-        for (String a : s.split(" "))
+        for (String a : s.split(" "))// counting the arr size 
         {
             count++;
         }
