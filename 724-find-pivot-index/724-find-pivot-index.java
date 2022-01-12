@@ -6,13 +6,14 @@ class Solution {
             totalsum += ele;
         
         int leftsum = 0;
+        int rightsum = totalsum;
         
         for(int i =0; i<nums.length; i++)
         {
-            totalsum -= nums[i];// behave like a rightsum
-            if(leftsum == totalsum)
+            rightsum -= nums[i];
+            if(leftsum == rightsum)
                 return i;
-            leftsum += nums[i];// the left sum
+            leftsum += nums[i];
             
         }
         
