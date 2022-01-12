@@ -3,19 +3,16 @@ class Solution {
 
         int totalsum = 0;
         for(int ele : nums)
-        {
             totalsum += ele;
-        }
         
         int leftsum = 0;
-        int rightsum = totalsum;
         
         for(int i =0; i<nums.length; i++)
         {
-            rightsum -= nums[i];
-            if(leftsum == rightsum)
+            totalsum -= nums[i];// behave like a rightsum
+            if(leftsum == totalsum)
                 return i;
-            leftsum += nums[i];
+            leftsum += nums[i];// the left sum
             
         }
         
