@@ -9,8 +9,7 @@ class Solution {
                         sum += arr[k];
                 }
             }
-        }
-        return sum;
+        } return sum;
         
         
     }
