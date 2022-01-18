@@ -2,7 +2,7 @@ class Solution {
     public int minStartValue(int[] nums) {
         
         int sum = 0;
-        int minsum = Integer.MAX_VALUE;
+        int minsum = 0;
         
         for(int i : nums)
         {
