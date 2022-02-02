@@ -49,7 +49,7 @@ class Solution
     {
         // your code here
         
-        long[] ary = new long[arr.length];
+        /*long[] ary = new long[arr.length];
         
         for(int i=0; i< arr.length; i++)
         {
@@ -59,6 +59,16 @@ class Solution
         for(int i =0; i< arr.length; i++)
         {
             arr[i] = ary[i];
+        }*/
+        
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = arr[i] + (arr[(int)arr[i]]%n)*n;
+           
+        }
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=arr[i]/n;
         }
     }
 }
