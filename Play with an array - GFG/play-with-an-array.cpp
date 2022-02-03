@@ -40,9 +40,12 @@ int main(){
 vector<int> formatArray(vector<int> a,int n)
 {
 //add code here.
-    for (int i = 0; i < n; i++) {
-        if (i % 2 != 0) {
-            if (a[i] < a[i - 1]) {
+    for (int i = 0; i < n; i++) 
+    {
+        if (i % 2 != 0) 
+        {
+            if (a[i] < a[i - 1]) 
+            {
                 int temp = a[i - 1];
                 a[i - 1] = a[i];
                 a[i] = temp;
