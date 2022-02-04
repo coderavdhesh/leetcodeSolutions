@@ -36,13 +36,11 @@ class Solution {
         
         for(int i =0; i<n; i++)
         {
-            count++;
             int temp = arr[i];
-            while(temp>k)
-            {
-                count++;
-                temp -= k;
-            }
+            count += temp/k;
+            
+            if(temp%k > 0)
+               count++;
         }
         
         return count;
