@@ -34,14 +34,22 @@ public class Main {
 class Solution {
     int findMaximum(int[] arr, int n) {
         // code here
+        int s=0,e=n-1;
+    
+    if((arr[s]<arr[s+1]) && (arr[e-1]<arr[e]))
+    return arr[e];
+    
+    while(s<=e)
+    {
+        int mid=s+(e-s)/2;
         
-        int max = arr[0];
-        
-        for(int element : arr)
-        {
-            max = Math.max(max,element);
-        }
-        
-        return max;
+        if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])
+            return arr[mid];
+        else if(arr[mid]<arr[mid-1] && arr[mid]>arr[mid+1])
+            e=mid-1;
+        else
+            s=mid+1;
+    }
+    return -1;
     }
 }
