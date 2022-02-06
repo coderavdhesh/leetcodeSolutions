@@ -58,9 +58,20 @@ class Solution
     {
         // add your code here
         
+        int zeros = 0;
+        for (int i =0; i<N; i++)
+        {
+            if(A[i] == 0)
+                zeros++;
+        }
         
-        
-        
+        for(int j=0; j<N; j++)
+        {
+            if(j< zeros)
+                A[j] = 0;
+            else
+                A[j] = 1;
+        }
         
         /**************
         * No need to print the array
