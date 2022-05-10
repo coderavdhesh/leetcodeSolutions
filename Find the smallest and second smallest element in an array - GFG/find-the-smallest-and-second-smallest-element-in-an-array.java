@@ -44,6 +44,8 @@ class Compute
 {
     public long[] minAnd2ndMin(long a[], long n)  
     {
+        /*
+        //. FIRST APPROACH WITH THE HELP OF MAX-HEAP
         // this code is having O(N) complexity for time.
         
         if( a.length < 2)
@@ -56,12 +58,8 @@ class Compute
         {
             if(!maxHeap.contains(element))// do not include the duplicates
                  maxHeap.offer(element);
-            // else
-e
-e
-            //     continue;
             
-            if(maxHeap.size() > 2)
+            if(maxHeap.size() > 2)// bound the size of heap by 2
                  maxHeap.poll();
         }
         
@@ -76,7 +74,31 @@ e
             arr[i] = maxHeap.poll();
         }
         
-        return arr;// array output 
+        return arr;// array output  */
         
+        long[] arr = {-1,-1};
+        
+        long first = Integer.MAX_VALUE;
+        long second = Integer.MIN_VALUE;
+        
+        for( int i=0 ; i<(int) n ; i++)
+        {
+            if(a[i] < first)
+            {
+                second = first;
+                first = a[i];
+            }
+            else if(a[i] < second && a[i]> first)
+                second = a[i];
+                
+                
+            if(first != Integer.MAX_VALUE && second != Integer.MAX_VALUE)
+            {
+                arr[0] = first;
+                arr[1] = second;
+            }
+        }
+        
+        return arr;
     }
 }
