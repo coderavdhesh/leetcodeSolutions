@@ -45,16 +45,28 @@ class Solution{
     {
         //Your code here
         
-        Arrays.sort(A);
-        Arrays.sort(B);
+        // Arrays.sort(A);  // O(nlogn)
+        // Arrays.sort(B);
         
-        int sum =0;
+        // int sum =0;
         
-        for(int i= 0; i<N; i++)
-        {
-            sum += Math.abs(A[i] - B[i]);
-        }
+        // for(int i= 0; i<N; i++)   // O(n)
+        // {
+        //     sum += Math.abs(A[i] - B[i]);
+        // }
         
-        return sum == 0 ? true : false ;
+        // return sum == 0 ? true : false ;
+        
+        
+        // hash map 
+        
+        // HashMap<Integer, Integer> map = new HashMap<>();
+        
+        // for(int i=0 ; i<N; i++)
+        // {
+            
+        // }
+        
+        
     }
 }
