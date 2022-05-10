@@ -44,18 +44,22 @@ class Compute
 {
     public long[] minAnd2ndMin(long a[], long n)  
     {
+        // this code is having O(N) complexity for time.
         
         if( a.length < 2)
           return new long[]{-1};
         
+        // creating max heap 
         PriorityQueue<Long> maxHeap = new PriorityQueue<Long>(Collections.reverseOrder());
         
         for(long element : a)
         {
-            if(!maxHeap.contains(element))
+            if(!maxHeap.contains(element))// do not include the duplicates
                  maxHeap.offer(element);
-            else
-                continue;
+            // else
+e
+e
+            //     continue;
             
             if(maxHeap.size() > 2)
                  maxHeap.poll();
@@ -63,7 +67,8 @@ class Compute
         
         if(maxHeap.size() < 2)
            return new long[]{-1};
-           
+         
+        // creating array to get the output array.  
         long[] arr = new long[2];
         
         for(int i =1; i>=0; i--)
@@ -71,7 +76,7 @@ class Compute
             arr[i] = maxHeap.poll();
         }
         
-        return arr;
+        return arr;// array output 
         
     }
 }
