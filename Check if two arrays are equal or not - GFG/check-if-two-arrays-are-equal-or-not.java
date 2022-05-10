@@ -60,13 +60,34 @@ class Solution{
         
         // hash map 
         
-        // HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Long, Integer> map = new HashMap<>();
+        int count =0;
         
-        // for(int i=0 ; i<N; i++)
-        // {
+        for(int i=0 ; i<N; i++)
+        {
+            if(map.get(A[i]) == null)
+               map.put(A[i],1);
+            else
+            {
+                count = map.get(A[i]);
+                count++;
+                map.put(A[i],count);
+            }
+        }
+        
+        for(int i=0 ; i<N; i++)
+        {
+            if(!map.containsKey(B[i]))
+               return false;
+            if(map.get(B[i])==0)
+               return false;
             
-        // }
+            count = map.get(B[i]);
+            --count;
+            map.put(B[i], count);
+        }
         
+        return true;
         
     }
 }
