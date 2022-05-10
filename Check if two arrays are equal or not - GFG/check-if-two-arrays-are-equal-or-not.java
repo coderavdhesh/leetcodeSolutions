@@ -52,9 +52,9 @@ class Solution{
         
         for(int i= 0; i<N; i++)
         {
-            sum +
+            sum += Math.abs(A[i] - B[i]);
         }
         
-        return true;
+        return sum == 0 ? true : false ;
     }
 }
