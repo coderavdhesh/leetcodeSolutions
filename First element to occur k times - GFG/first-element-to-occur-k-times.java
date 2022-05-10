@@ -28,7 +28,6 @@ class Solution
     public int firstElementKTime(int[] a, int n, int k) {
         
         HashMap<Integer, Integer> map = new HashMap<>();
-        int count =0; //value
         
         for(int i =0 ; i< n; i++)
         {
