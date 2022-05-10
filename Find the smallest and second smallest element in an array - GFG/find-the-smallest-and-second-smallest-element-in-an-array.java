@@ -91,13 +91,14 @@ class Compute
             else if(a[i] < second && a[i]> first)
                 second = a[i];
                 
-                
+        }
+        
+            
             if(first != Integer.MAX_VALUE && second != Integer.MAX_VALUE)
             {
                 arr[0] = first;
                 arr[1] = second;
             }
-        }
         
         return arr;
     }
