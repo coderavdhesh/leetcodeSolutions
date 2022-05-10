@@ -40,15 +40,33 @@ class Compute {
     {
          // Your code goes here
          // n*(n+1)/2
+        
+        
+        // this approach is o(n) but it will over flow with large integers.
+        
+        //  int actualSum = (N*(N+1))/2;
+        //  int sum =0;
          
-         int actualSum = (N*(N+1))/2;
-         int sum =0;
+        //  for( int i =0; i< A.length; i++)
+        //  {
+        //      sum += A[i];
+        //  }
          
-         for( int i =0; i< A.length; i++)
-         {
-             sum += A[i];
-         }
-         
-         return actualSum -sum;
+        //  return actualSum -sum;
+        
+        int Xor = 0;
+        
+        for(int element : A)
+        {
+            Xor ^= element;
+        }
+        
+        for(int i=1; i<=N; i++)
+        {
+            Xor ^= i;
+        }
+        
+        return Xor;
+        
     }
 }
