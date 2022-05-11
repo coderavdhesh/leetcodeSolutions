@@ -36,13 +36,32 @@ class Solution {
         
         // we can use BitManupilation XOR
         
-        int Xor = 0;
+        // int Xor = 0;
         
-        for( int element :  arr)
+        // for( int element :  arr)
+        // {
+        //     Xor ^= element;
+        // }
+        
+        // return Xor;
+        
+        
+        // we can also use hashMap to map the values of every key and get the odd Key
+        
+        HashMap<Integer, Integer> maps = new HashMap<>();
+        
+        for( int i : arr)
         {
-            Xor ^= element;
+            maps.put(i, maps.get(i)==null ? 1 : maps.get(i)+1 );
         }
         
-        return Xor;
+        for( int j : arr)
+        {
+            if(maps.get(j)%2 != 0)
+                return j;
+        }
+        
+        return 0;
+        
     }
 }
