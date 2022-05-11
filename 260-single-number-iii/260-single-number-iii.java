@@ -16,7 +16,7 @@ class Solution {
                 list.add(i);
         }
         
-        int[] arr = new int[list.size()];
+        int[] arr = new int[2];
         
         for(int i =0; i <list.size(); i++)
         {
