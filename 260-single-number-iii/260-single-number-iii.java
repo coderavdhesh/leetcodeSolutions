@@ -16,10 +16,12 @@ class Solution {
                 list.add(i);
         }
         
-        int[] arr = new int[2];
+        int[] arr = new int[list.size()];
         
-        arr[0] = list.get(0);
-        arr[1] = list.get(1);
+        for(int i =0; i <list.size(); i++)
+        {
+            arr[i] = list.get(i);
+        }
         
         return arr;
         
