@@ -18,10 +18,8 @@ class Solution {
         
         int[] arr = new int[2];
         
-        for(int i =0; i <list.size(); i++)
-        {
-            arr[i] = list.get(i);
-        }
+        arr[0] = list.get(0);
+        arr[1] = list.get(1);
         
         return arr;
         
