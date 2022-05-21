@@ -24,32 +24,39 @@ class  Solution
     {
         // Your code goes here
         
-        long[] a = new long[n];
+        // long[] a = new long[n];
         
-        int i=0;
-        int j = n/2;
+        // int i=0;
+        // int j = n/2;
         
-        int k=0;
-        while(k<n)
-        {
-            if((k+1) %2 == 1)//even index
-            {
-                a[k] = arr[i];
-                i++;
-            }
-            if((k+1) % 2 == 0)//odd index
-            {
-                a[k] = arr[j];
-                j++;
-            }
-            k++;
-        }
+        // int k=0;
+        // while(k<n)
+        // {
+        //     if((k+1) %2 == 1)//even index
+        //     {
+        //         a[k] = arr[i];
+        //         i++;
+        //     }
+        //     if((k+1) % 2 == 0)//odd index
+        //     {
+        //         a[k] = arr[j];
+        //         j++;
+        //     }
+        //     k++;
+        // }
         
-        for(int g=0; g<n; g++)
-        {
-            arr[g] = a[g];
-        }
+        // for(int g=0; g<n; g++)
+        // {
+        //     arr[g] = a[g];
+        // }
         
+        long[] temp = new long[n];
+       int k = 0;
+       for(int i=0, j = n/2; i<n && j<n; i++,j++){
+           temp[k++] = arr[i];
+           temp[k++] = arr[j];
+       }
+       System.arraycopy(temp,0,arr,0,n);
     }
 }
 
