@@ -1,6 +1,8 @@
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
         
+        // this code is having linear time and linear space
+        
         List<Integer> list = new ArrayList<Integer>();
         
         HashMap<Integer, Integer> map = new HashMap<>();
