@@ -8,7 +8,8 @@ class Solution {
             map.put(i, map.get(i) == null ? 1 : map.get(i)+1);
         }
         
-        HashSet<Object> uniqueValues = new HashSet<Object>(map.values());
+        // this line is important
+        HashSet<Integer> uniqueValues = new HashSet<Integer>(map.values());
         
         return (uniqueValues.size() == map.size()) ? true : false;
       
