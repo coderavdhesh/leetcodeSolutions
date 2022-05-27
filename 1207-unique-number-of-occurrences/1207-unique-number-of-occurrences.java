@@ -9,7 +9,16 @@ class Solution {
         }
         
         // this line is important
-        HashSet<Integer> uniqueValues = new HashSet<Integer>(map.values());
+        //HashSet<Integer> uniqueValues = new HashSet<Integer>(map.values());
+        
+        Set<Integer> uniqueValues = new HashSet<>();
+        for (int i : map.keySet()) {
+            if (uniqueValues.contains(map.get(i))) {
+                return false;
+            }
+            uniqueValues.add(map.get(i));
+        }
+        
         
         return (uniqueValues.size() == map.size()) ? true : false;
       
