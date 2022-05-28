@@ -6,6 +6,6 @@ CASE
     THEN salary 
     ELSE 0 
 END 
-AS Bonus from Employees;
+AS Bonus FROM Employees;
 
 
