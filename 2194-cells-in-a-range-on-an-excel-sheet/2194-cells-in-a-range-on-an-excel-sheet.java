@@ -13,7 +13,10 @@ class Solution {
         {
             for(char j =a; j<=b; j++)
             {
-                strList.add(new String(new char[]{i, j}));
+                // this line is imp
+                // strList.add(new String(new char[]{i, j}));
+                String str = Character.toString(i) + Character.toString(j);
+                strList.add(str);
             }
         }
         
@@ -21,7 +24,7 @@ class Solution {
         
         
 //         List<String> l = new ArrayList<>();
-//     int c1 = (int)s.charAt(0);
+//         int c1 = (int)s.charAt(0);
 //     int c2 = (int)s.charAt(3);
 //     int r1 = (int)s.charAt(1);
 //     int r2 = (int)s.charAt(4);
