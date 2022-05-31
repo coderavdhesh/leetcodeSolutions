@@ -1,7 +1,7 @@
 class Solution {
     public boolean isAlienSorted(String[] words, String order) {
         
-                Map<Character, Integer> mp = new HashMap<>();
+        Map<Character, Integer> mp = new HashMap<>();
         for(int i=0;i<order.length();i++){
           mp.put(order.charAt(i), i);
         }
