@@ -1,7 +1,19 @@
 class Solution {
     public boolean checkIfExist(int[] arr) {
         
-        Arrays.sort(arr);
+        // this brute -force approce having O(n2) time
+        for(int i =0; i<arr.length-1; i++)
+        {
+            for(int j =0; j<arr.length; j++)
+            {
+                if(i!=j && arr[i] == 2* arr[j])
+                    return true;
+            }
+        }
+        return false;
+        
+        // this code is having O(nlogn) compexity of code
+        /*Arrays.sort(arr);
         
         for(int i =0; i<arr.length; i++)
         {
@@ -24,6 +36,6 @@ class Solution {
             }
             
         }
-        return false;
+        return false;*/
     }
 }
