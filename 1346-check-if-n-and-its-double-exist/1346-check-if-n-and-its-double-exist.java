@@ -1,13 +1,28 @@
 class Solution {
     public boolean checkIfExist(int[] arr) {
         
-        for(int i =0; i<arr.length-1; i++)
+        Arrays.sort(arr);
+        
+        for(int i =0; i<arr.length; i++)
         {
-            for(int j =0; j<arr.length; j++)
+            int target = 2*arr[i];
+            
+            int left = 0;
+            int right = arr.length-1;
+            
+            while(left<=right)
             {
-                if(i!=j && arr[i] == 2* arr[j])
+                int mid = left + (right -left) /2;
+                
+                if(arr[mid] == target && mid != i)
                     return true;
+                else if(target < arr[mid])
+                    right = mid-1;
+                else
+                    left = mid +1;
+                
             }
+            
         }
         return false;
     }
