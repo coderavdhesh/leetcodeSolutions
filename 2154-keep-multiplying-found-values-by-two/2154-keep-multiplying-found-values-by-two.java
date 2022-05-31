@@ -12,9 +12,11 @@ class Solution {
                 original *= 2;
         }
         
-        // we can also sort the array first and the apply the binary search to get the element, this code will give me O(nlogn) time compexity
+        // we can also sort the array first and the apply the binary search 
+        // to get the element, this code will give me O(nlogn) time compexity
         
-        // we can also do this with brute force approch of the double loop and it will give me the compexity of O(n*n), joo ki bekar solution hain
+        // we can also do this with brute force approch of the double loop 
+        // and it will give me the compexity of O(n*n), joo ki bekar solution hain
         
         return original;
         
