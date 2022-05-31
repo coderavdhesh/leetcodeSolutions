@@ -1,7 +1,7 @@
 class Solution {
     public boolean checkIfExist(int[] arr) {
         
-        // this brute -force approce having O(n2) time
+        // this **brute-force** approch having O(n2) time
         /*for(int i =0; i<arr.length-1; i++)
         {
             for(int j =0; j<arr.length; j++)
@@ -12,7 +12,7 @@ class Solution {
         }
         return false;*/
         
-        // this code is having O(nlogn) compexity of code
+        // this code with **Binary Search** is having O(nlogn) compexity of code
         /*Arrays.sort(arr);
         
         for(int i =0; i<arr.length; i++)
@@ -51,7 +51,7 @@ class Solution {
 //         }
 //         return false;
         
-        //
+        // the solution with **HashSet** also haing O(n) solution 
         
         HashSet<Integer> set = new HashSet<>();
         
