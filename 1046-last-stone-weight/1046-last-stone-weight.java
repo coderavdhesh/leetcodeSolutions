@@ -25,7 +25,7 @@ class Solution {
         return weight;*/
         
         //
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
         
         for(int stone : stones) {
             pq.offer(stone);
