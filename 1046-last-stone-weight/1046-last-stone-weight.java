@@ -24,8 +24,8 @@ class Solution {
         
         return weight;*/
         
-        //
-        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+        // copied from discussion, same approch but the code is clean
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a); // what ((a, b) -> b - a) is this? // the laternative of Collections.reverceOrder()
         
         for(int stone : stones) {
             pq.offer(stone);
