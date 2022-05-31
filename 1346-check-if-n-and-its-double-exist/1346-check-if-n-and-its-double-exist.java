@@ -2,7 +2,7 @@ class Solution {
     public boolean checkIfExist(int[] arr) {
         
         // this brute -force approce having O(n2) time
-        for(int i =0; i<arr.length-1; i++)
+        /*for(int i =0; i<arr.length-1; i++)
         {
             for(int j =0; j<arr.length; j++)
             {
@@ -10,7 +10,7 @@ class Solution {
                     return true;
             }
         }
-        return false;
+        return false;*/
         
         // this code is having O(nlogn) compexity of code
         /*Arrays.sort(arr);
@@ -37,5 +37,19 @@ class Solution {
             
         }
         return false;*/
+        
+        // this hashmap solution is the most 
+        
+        HashMap<Integer, Boolean> hashmap = new HashMap<>();
+        
+        for(int num : arr) 
+        {
+            if(hashmap.containsKey(num * 2) || num % 2 == 0 && hashmap.containsKey(num / 2))
+                return true;
+            else
+                hashmap.put(num, true);
+        }
+        return false;
+
     }
 }
