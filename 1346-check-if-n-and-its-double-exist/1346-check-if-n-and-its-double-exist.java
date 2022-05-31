@@ -38,18 +38,30 @@ class Solution {
         }
         return false;*/
         
-        // this hashmap solution is the most 
+        // this **hashmap** solution is the most optimized with O(n) time
         
-        HashMap<Integer, Boolean> hashmap = new HashMap<>();
+//         HashMap<Integer, Boolean> hashmap = new HashMap<>();
         
-        for(int num : arr) 
+//         for(int num : arr) 
+//         {
+//             if(hashmap.containsKey(num * 2) || num % 2 == 0 && hashmap.containsKey(num / 2))
+//                 return true;
+//             else
+//                 hashmap.put(num, true);
+//         }
+//         return false;
+        
+        //
+        
+        HashSet<Integer> set = new HashSet<>();
+        
+        for(int i : arr)
         {
-            if(hashmap.containsKey(num * 2) || num % 2 == 0 && hashmap.containsKey(num / 2))
+            if(set.contains(i*2) || (i%2 == 0 && set.contains(i/2)))
                 return true;
             else
-                hashmap.put(num, true);
+                set.add(i);
         }
         return false;
-
     }
 }
