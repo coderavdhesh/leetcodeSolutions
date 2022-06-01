@@ -18,7 +18,7 @@ class Solution {
         
         
         // we can also use the indexOf to search any substring into a string
-        
+        // batao zara yee 100% faster hain with same concept i have applied \U0001f602
         
         int index = -1;
         String[] words = sentence.split(" ");
