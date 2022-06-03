@@ -1,8 +1,8 @@
 class Solution {
     public int countValidWords(String sentence) {
         
-        String regex = "^([a-z]+(-?[a-z]+)?)?(!|\\.|,)?$";
-        String r2 = "[^0-9]+";
+        String regex = "^([a-z]+(-?[a-z]+)?)?(!|\\.|,)?$";// Important
+        String r2 = "[^0-9]+$";
         
         String[] arr = sentence.split("\\s+");
         
