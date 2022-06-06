@@ -15,9 +15,8 @@ class Solution {
         int[] arr = new int[Intersection.size()];
         
         int k = 0;
-        for(int i : Intersection )
+        for(int i : Intersection)
             arr[k++] = i;
-        
         
         return arr;
     }
