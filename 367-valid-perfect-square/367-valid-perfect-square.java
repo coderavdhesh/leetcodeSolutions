@@ -16,7 +16,7 @@ class Solution {
                 end = mid-1;
         }
         
-        int ans = (int)start -1;
+        int ans = (int)end -1;
         
         return (ans*ans == num) ? true : false;
     }
