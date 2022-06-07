@@ -18,12 +18,14 @@ class Solution {
         if( firstIdx(nums,target) == -1)
             return list;
         
+        // this binary wala code is having O(nLogn) time
         for(int i = firstIdx(nums,target); i<=lastIdx(nums,target); i++)
             list.add(i);
         
         return list;
     }
     
+    // this method to get the firstly ouccured index
     public int firstIdx(int[] nums, int target)
     {
         int start = 0;
@@ -47,6 +49,7 @@ class Solution {
         }
         return ans;
     }
+    // this method to get the lastly ouccured index
     public int lastIdx(int[] nums, int target)
     {
         int start = 0;
