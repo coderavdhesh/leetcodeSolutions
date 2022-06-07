@@ -1,8 +1,8 @@
 class Solution {
     public int peakIndexInMountainArray(int[] arr) {
         
-        int start = 1;
-        int end = arr.length-2;
+        int start = 1;              // I left first (0 indexed) and last element
+        int end = arr.length-2;     // to prevent indexoutofbound error
         
         while(start <= end)
         {
