@@ -1,7 +1,10 @@
 class Solution {
     public boolean squareIsWhite(String coordinates) {
         
-        return ( (int) coordinates.charAt(0) + Character.getNumericValue(coordinates.charAt(1)) )%2 ==0 ? false : true;
+        int a = (int) coordinates.charAt(0);
+        int b = Character.getNumericValue(coordinates.charAt(1));
+        
+        return (a+b)%2 == 0 ? false : true;
         
     }
 }
