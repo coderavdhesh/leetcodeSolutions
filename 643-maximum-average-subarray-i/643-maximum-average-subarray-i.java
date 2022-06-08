@@ -2,6 +2,7 @@ class Solution {
     public double findMaxAverage(int[] nums, int k) {
         
         int i =0, j=0;
+        
         double sum =0;
         
         while(j < k)
@@ -9,7 +10,7 @@ class Solution {
         
         double Avg = sum / k;
         
-        while(j<nums.length)
+        while(i<nums.length-k)
         {
             sum = sum - nums[i] + nums[j];
             i++;
