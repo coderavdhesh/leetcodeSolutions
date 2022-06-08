@@ -1,7 +1,8 @@
 class Solution {
     public char findTheDifference(String s, String t) {
         
-        HashMap<Character,Integer> mapS = new HashMap<>();
+        // this code is having o(n) time but consuming more space
+        /*HashMap<Character,Integer> mapS = new HashMap<>();
         HashMap<Character,Integer> mapT = new HashMap<>();
         
         for(int i =0; i<s.length(); i++)
@@ -18,7 +19,20 @@ class Solution {
             if( mapS.get(ch) != mapT.get(ch) )
                 return ch;
         }
+
+        return ' ';*/
         
-        return ' ';
+        // Let's try the bit manipulation
+        
+        char xor = ' ';
+        
+        for(int i =0; i<s.length() ; i++)
+            xor ^= s.charAt(i);
+        
+        for(int i =0; i<t.length() ; i++)
+            xor ^= t.charAt(i);
+        
+        return Character.toLowerCase(xor);
+        
     }
 }
