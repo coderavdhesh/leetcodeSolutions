@@ -22,7 +22,7 @@ class Solution {
 
         return ' ';*/
         
-        // Let's try the bit manipulation
+        // Let's try the bit manipulation and much better solution
         
         char xor = ' ';
         
