@@ -17,9 +17,10 @@ class Solution {
         
         for(int i=m ; i<n+m; i++)
         {
-            nums1[i]=nums2[i-m];
+            nums1[i] = nums2[i-m];
         }
         Arrays.sort(nums1);
+        
         
         
     }
