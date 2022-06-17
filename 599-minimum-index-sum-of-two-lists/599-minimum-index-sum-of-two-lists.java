@@ -1,46 +1,38 @@
 class Solution {
     public String[] findRestaurant(String[] list1, String[] list2) {
         
-        int indexSum =-1;
-        HashMap<String, Integer> list = new HashMap<>();
+        // copy kara hua code bhi dekh hi lete hain try kar ke
+        HashMap<String, Integer> map1 = new HashMap<>();
+        HashMap<String, Integer> map2 = new HashMap<>();
+        HashMap<String, Integer> ansMap = new HashMap<>();
+        ArrayList<String> ans = new ArrayList<>();
+        for(int i=0; i<list1.length; i++) {
+            map1.put(list1[i], i);
+        }
         
-        int check =0;
-        
-        for( int i =0 ; i< list1.length; i++)
-        {
-            for(int j =0; j< list2.length; j++)
-            {
-                if(list1[i].equals(list2[j]))
-                {
-                    list.put(list1[i], i+j);
-                    check = i+j;
+         for(int i=0; i<list2.length; i++) {
+            map2.put(list2[i], i);
+        }
+        int mIndex = Integer.MAX_VALUE;
+        for(String a: map1.keySet()) {
+            if(map2.containsKey(a) == true) {
+                if((map1.get(a) + map2.get(a)) <= mIndex) {
+                    mIndex = map1.get(a) + map2.get(a);
+                    ansMap.put(a, mIndex);
                 }
             }
         }
         
-        int min = Integer.MAX_VALUE;
-        boolean flag = true;
-        
-        for(int n : list.values())
-        {
-            if(check != n)
-                flag = false;
-            
-            min = Math.min(min, n);
+        for(String a: ansMap.keySet()) {
+            if(ansMap.get(a) == mIndex) {
+                ans.add(a);
+            }
         }
-        
-        if(!flag)
-            for(String str : list.keySet())
-                if(list.get(str) == min)
-                    return new String[]{str};
-        
-        String[] arr = new String[list.size()];
-        
-        int n =0;
-        for(String str : list.keySet())
-            arr[n++] = str;
-            
-        return arr;
+        String[] ansA = new String[ans.size()];
+        for(int i=0; i<ansA.length; i++) {
+            ansA[i] = ans.get(i);
+        }
+        return ansA;
         
     }
 }
