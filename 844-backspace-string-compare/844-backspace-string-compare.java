@@ -28,6 +28,6 @@ class Solution {
             }
         }
         
-        return stack1.toString().equals(stack2.toString());
+        return stack1.equals(stack2);
     }
 }
