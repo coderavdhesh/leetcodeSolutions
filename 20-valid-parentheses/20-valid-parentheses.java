@@ -13,8 +13,7 @@ class Solution {
             }
             else st.push(c);
         }
-        if(st.size()==0)return true;
-        else return false; 
         
+        return st.isEmpty() ;
     }
 }
