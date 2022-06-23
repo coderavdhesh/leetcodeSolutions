@@ -48,20 +48,14 @@ class Solution
         
         for(int i =0; i< price.length; i++)
         {
-            // if(stack.isEmpty())
-            //     arr[i] = (i+1);
-            // else if(!stack.isEmpty() && price[stack.peek()] > price[i])
-            //     arr[i] =  i -stack.peek();
-            // else if( !stack.isEmpty() && price[stack.peek()] <= price[i] )
-            // {
-                while(!stack.isEmpty() && price[stack.peek()] <= price[i])
-                    stack.pop();
-                    
-                if(!stack.isEmpty())
-                    arr[i] = i - stack.peek() ;
-                else
-                    arr[i] = i+1;
-            // }
+            while(!stack.isEmpty() && price[stack.peek()] <= price[i])
+                stack.pop();
+                
+            if(!stack.isEmpty())
+                arr[i] = i - stack.peek() ;
+            else
+                arr[i] = i+1;
+        
             stack.push(i);
         }
           
