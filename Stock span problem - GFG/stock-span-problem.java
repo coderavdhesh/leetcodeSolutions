@@ -43,21 +43,29 @@ class Solution
     {
         // Your code here
         
+        Stack < Integer > stack = new Stack < > ();
+        int[] arr = new int[price.length];
         
-        
-        Stack < Integer > st = new Stack < > ();
-        st.push(0);
-        
-        int[] S = new int[n];
-        S[0] = 1;
-        for (int i = 1; i < n; i++) {
-          while (!st.empty() && price[st.peek()] <= price[i])
-            st.pop();
-        
-        S[i] = (st.empty()) ? (i + 1) : (i - st.peek());
-            st.push(i);}
+        for(int i =0; i< price.length; i++)
+        {
+            if(stack.isEmpty())
+                arr[i] = (i+1);
+            else if(!stack.isEmpty() && price[stack.peek()] > price[i])
+                arr[i] =  i -stack.peek();
+            else if( !stack.isEmpty() && price[stack.peek()] <= price[i] )
+            {
+                while(!stack.isEmpty() && price[stack.peek()] <= price[i])
+                    stack.pop();
+                    
+                if(!stack.isEmpty())
+                    arr[i] = i - stack.peek() ;
+                else
+                    arr[i] = i+1;
+            }
+            stack.push(i);
+        }
           
-        return S;
+        return arr;
     }
     
 }
