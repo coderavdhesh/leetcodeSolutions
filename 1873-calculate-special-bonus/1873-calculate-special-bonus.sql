@@ -6,6 +6,8 @@ CASE
     THEN salary 
     ELSE 0 
 END 
-AS Bonus FROM Employees;
+AS Bonus FROM Employees 
+order by employee_id;
+
 
 
