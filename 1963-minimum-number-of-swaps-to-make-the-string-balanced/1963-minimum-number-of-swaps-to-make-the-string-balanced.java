@@ -22,6 +22,7 @@ class Solution {
         
         
         
+        // coppied code hain ye wala
         int open = 0, close = 0, unbalanced = 0;
         for(char ch : s.toCharArray()) {
             if(ch == '[') open++;
