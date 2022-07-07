@@ -36,5 +36,36 @@ class Solution {
         
         return stack.isEmpty();
         
+        
+        // this o(1) space wala code just 89 / 94 test cases passed.
+//         int count_a =0;
+//         int count_b =0;
+//         int count_c =0;
+        
+//         for(int i =0; i< s.length() ; i++)
+//         {
+//             char ch = s.charAt(i);
+//             if(count_b > count_a)
+//                 return false;
+//             if(ch == 'a')
+//                 count_a++;
+//             else if(ch == 'b')
+//                 count_b++;
+//             else if(ch == 'c')
+//             {
+//                 if(count_a >= count_b && count_b >= count_c && count_b>0 )
+//                 {
+//                     count_a--;
+//                     count_b--;
+//                 }
+//                 else
+//                 {
+//                     count_c++;
+//                 }
+//             }
+//         }
+        
+//         return (count_a + count_b + count_c) == 0 ;
+        
     }
 }
