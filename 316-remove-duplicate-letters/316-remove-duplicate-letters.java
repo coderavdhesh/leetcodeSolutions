@@ -1,7 +1,6 @@
 class Solution {
     public String removeDuplicateLetters(String s) {
         
-//        
         Stack<Character> stack = new Stack<>();
         
         for(int i=0;i<s.length();i++)
@@ -12,19 +11,14 @@ class Solution {
                 while( !stack.isEmpty() && (int)stack.peek() > (int)ch && s.substring(i,s.length()).indexOf(stack.peek()) != -1 )
                 {
                     stack.pop();
-                    // stack.push(ch);
                 }
-                    stack.push(ch);
-            
-                    
+                stack.push(ch);  
             }
             else if (stack.isEmpty())
             {
                 stack.push(ch);
             }
         }
-        
-        System.out.print(stack);
         
         String ans="";
         
