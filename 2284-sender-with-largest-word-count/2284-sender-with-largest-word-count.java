@@ -12,7 +12,7 @@ class Solution {
             
             map.put(str, map.get(str) == null ? count : map.get(str) + count);
             
-            int currCount = map.get(str);
+            /*int currCount = map.get(str);
             
             if(currCount > max)
             {
@@ -22,8 +22,19 @@ class Solution {
             else if ( currCount == max)
                 ans = ans.compareTo(senders[i]) < 1 ? senders[i]: ans;
                 // the only important line of code
+                */
+            
+            max = Math.max(max, map.get(str));
         }
         
-        return ans;
+        PriorityQueue<String> heap = new PriorityQueue<>(Collections.reverseOrder());
+        
+        for(String s : map.keySet())
+        {
+            if(map.get(s) == max)
+                heap.offer(s);
+        }
+        
+        return heap.poll();
     }
 }
