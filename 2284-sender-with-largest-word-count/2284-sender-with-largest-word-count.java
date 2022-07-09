@@ -20,7 +20,7 @@ class Solution {
                 ans = str;
             }
             else if ( currCount == max)
-                ans = ans.compareTo(senders[i])<1 ? senders[i]: ans;
+                ans = ans.compareTo(senders[i]) < 1 ? senders[i]: ans;
                 // the only important line of code
         }
         
