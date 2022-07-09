@@ -21,7 +21,7 @@ class Solution {
             }
             else if ( currCount == max)
                 ans = ans.compareTo(senders[i])<1 ? senders[i]: ans;
-                // the omly important line of code
+                // the only important line of code
         }
         
         return ans;
