@@ -1,5 +1,4 @@
 class Solution {
-    
     public class Pair{
     int key;
     int num;
@@ -10,8 +9,6 @@ class Solution {
 }
     
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
-        
-        // PriorityQueue<Pair> maxHeap = new PriorityQueue<Pair>(Collections.reverseOrder());
         
         PriorityQueue<Pair> maxHeap = new PriorityQueue<Pair>(new Comparator<Pair>() {
             public int compare(Pair a, Pair b) {
