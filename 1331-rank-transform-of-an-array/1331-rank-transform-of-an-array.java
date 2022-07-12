@@ -1,6 +1,8 @@
 class Solution {
     public int[] arrayRankTransform(int[] arr) {
         
+        // the code is having O(nLog) time
+        
         int[] ary = new int[arr.length];
         
         int j =0;
