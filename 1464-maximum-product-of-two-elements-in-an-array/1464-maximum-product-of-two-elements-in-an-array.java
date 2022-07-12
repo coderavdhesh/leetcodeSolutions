@@ -1,9 +1,23 @@
 class Solution {
     public int maxProduct(int[] nums) {
         
-        Arrays.sort(nums);
         
-        return (nums[nums.length-1]-1)*( nums[nums.length-2]-1);
+        int max = 1;
+        int secmax = 0;
         
+        for(int num : nums)
+        {
+            if(max<num)
+            {
+                secmax = max;
+                max = num;
+            }
+            else if(secmax<num)
+            {
+                secmax = num;
+            }
+        }
+        
+        return (max-1)*(secmax-1);
     }
 }
