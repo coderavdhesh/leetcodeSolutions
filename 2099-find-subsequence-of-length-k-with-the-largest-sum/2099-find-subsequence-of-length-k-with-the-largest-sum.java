@@ -14,7 +14,7 @@ class Pair{
 }
     public int[] maxSubsequence(int[] nums, int k) {
         
-        PriorityQueue<Pair> minheap = new PriorityQueue<>( (a,b) -> Integer.compare(a.value, b.value));
+        PriorityQueue<Pair> minheap = new PriorityQueue<>( (a,b) -> a.value - b.value );
         
         for(int i=0; i< nums.length; i++)
         {
@@ -24,7 +24,7 @@ class Pair{
                 minheap.poll();
         }
         
-        PriorityQueue<Pair> ansheap = new PriorityQueue<>( (a,b) -> Integer.compare(a.idx,b.idx));
+        PriorityQueue<Pair> ansheap = new PriorityQueue<>( (a,b) -> a.idx -b.idx );
         
         while(!minheap.isEmpty())
             ansheap.offer(minheap.poll());
