@@ -1,33 +1,23 @@
 class Solution {
     public int[][] kClosest(int[][] points, int k) {
         
-        HashMap< int[] ,Integer> map = new HashMap<>(); 
+        // with the use of int[][] pairs
         
-        for(int i =0; i< points.length; i++)
+        if(k == points.length) 
+            return points;
+        
+        PriorityQueue< int[] > maxheap = 
+            new PriorityQueue<>( (a,b) -> (b[0]*b[0]+ b[1]*b[1]) - (a[0]*a[0] + a[1]*a[1]) );
+        
+        for(int[] pairs : points )
         {
-            int num = points[i][0]*points[i][0] + points[i][1]*points[i][1];
-            map.put( new int[]{ points[i][0], points[i][1] } , num);
-        }
-        
-        PriorityQueue< Map.Entry< int[] , Integer>> maxheap = 
-            new PriorityQueue<>( (a,b) ->  b.getValue() - a.getValue() );
-        
-        for(Map.Entry entry : map.entrySet() )
-        {
-            maxheap.offer(entry);
+            maxheap.offer(pairs);
             
             if(maxheap.size() > k)
                 maxheap.poll();
         }
         
-        
-        
-        int[][] arr = new int[k][2];
-        
-        for(int i = 0 ; i<k ;i++)
-            arr[i] = maxheap.poll().getKey() ;
-        
-        return arr;
+        return maxheap.toArray(new int[0][0]);
         
     }
 }
