@@ -1,12 +1,10 @@
 class Solution {
     public int minStoneSum(int[] piles, int k) {
         
-        PriorityQueue<Integer> minheap = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> minheap = new PriorityQueue<>((a,b) -> b-a);
         
         for(int n : piles)
-        {
             minheap.offer(n);
-        }
         
         while( k> 0)
         {
