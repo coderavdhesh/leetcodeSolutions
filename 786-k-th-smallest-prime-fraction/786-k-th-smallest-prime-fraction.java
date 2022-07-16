@@ -1,8 +1,9 @@
 class Solution {
     public int[] kthSmallestPrimeFraction(int[] arr, int k) {
         
-        PriorityQueue<int[]> maxheap = 
-            new PriorityQueue<>((a,b) -> (b[0]*a[1] -a[0]*b[1]) );
+        PriorityQueue<int[]> maxheap = new PriorityQueue<>((a,b) -> {
+            return (b[0]*a[1]) - (a[0]*b[1]); 
+        });
         
         for(int i =0 ; i<arr.length; i++)
         {
