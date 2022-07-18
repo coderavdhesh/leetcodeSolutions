@@ -14,18 +14,17 @@ class Solution {
         for(Map.Entry entry : map.entrySet())
             maxheap.offer(entry);
         
-        Set<Integer> set = new HashSet<>();
-        
         int reqhalf = 0;
+        int count =0;
         while(reqhalf < half )
         {
             int num = maxheap.peek().getKey();
             int frq = maxheap.poll().getValue();
             
-            set.add(num);
             reqhalf += frq;
+            count++;
         }
         
-        return set.size();
+        return count;
     }
 }
