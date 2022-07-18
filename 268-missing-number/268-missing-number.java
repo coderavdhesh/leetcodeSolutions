@@ -1,21 +1,11 @@
 class Solution {
     public int missingNumber(int[] nums) {
         
-        Arrays.sort(nums);
+        int xor = 0;
         
-        int start = 0;
-        int end = nums.length-1;
+        for(int i =1; i<= nums.length; i++)
+            xor ^= (i ^ nums[i-1]);
         
-        while(start <= end)
-        {
-            int mid = start + (end- start)/2;
-            
-            if(nums[mid] > mid )
-                end = mid-1;
-            else
-                start = mid+1;
-        }
-        
-        return start;
+        return xor;
     }
 }
