@@ -19,12 +19,9 @@ class Solution {
         
         for(int i =0 ;i< mat.length; i++)
         {
-            int sum = 0;
+            int soldiers = binarySearch(mat[i], 0, mat[i].length);
             
-            for(int j =0; j< mat[i].length; j++)
-                sum += mat[i][j];
-            
-            maxheap.offer(new Pair(i, sum) );
+            maxheap.offer(new Pair(i, soldiers) );
             
             if(maxheap.size() > k)
                 maxheap.poll();
@@ -38,5 +35,19 @@ class Solution {
         }
         
         return arr;
+    }
+    
+    public int binarySearch(int[] arr, int s, int e)
+    {
+        while(s<e)
+        {
+            int mid = s + (e -s)/2;
+            
+            if( arr[mid] != 0 )
+                s = mid+1;
+            else
+                e = mid;
+        }
+        return s;
     }
 }
