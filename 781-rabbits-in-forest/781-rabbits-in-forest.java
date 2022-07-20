@@ -17,9 +17,6 @@ class Solution {
                 rabbits += (div*rab);
             else
                 rabbits += (div*rab) + (rab);
-            
-            
-            
         }
         
         return rabbits;
