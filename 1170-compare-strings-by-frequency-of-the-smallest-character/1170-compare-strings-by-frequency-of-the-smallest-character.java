@@ -7,7 +7,6 @@ class Solution {
         for(String str : words)
             wordsfreq[i++] = stringFreq(str);
         
-        
         int[] queriesfreq = new int[queries.length];
         
         int j= 0;
@@ -16,8 +15,6 @@ class Solution {
         
         //now search in wordsfreq array :
         Arrays.sort(wordsfreq);
-        System.out.println(Arrays.toString(queriesfreq));
-        System.out.println(Arrays.toString(wordsfreq));
         
         for(int k =0; k<queriesfreq.length; k++ )
         {
@@ -25,9 +22,7 @@ class Solution {
             queriesfreq[k] = moreFrequentWords(wordsfreq,0,wordsfreq.length-1,freq);
             System.out.println(queriesfreq[k]);
         }
-        
         return queriesfreq ;
-        
     }
     
     public int moreFrequentWords(int [] arr, int start, int end, int target)
@@ -37,15 +32,12 @@ class Solution {
         if(target > arr[arr.length-1])
             return 0;
         
-        int ans = 0;
         while(start<=end)
         {
             int mid = start + (end -start)/2;
             
             if(arr[mid] == target)
-            {
                 start = mid+1;
-            }
             else if (arr[mid] <= target)
                 start = mid +1;
             else 
