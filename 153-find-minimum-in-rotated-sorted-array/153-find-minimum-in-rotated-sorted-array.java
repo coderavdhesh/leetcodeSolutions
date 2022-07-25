@@ -21,9 +21,9 @@ class Solution {
 
             if(mid<arr.length-1  && arr[mid]>arr[mid+1])
                 return mid;
-            if(mid>0 && arr[mid]<arr[mid-1])
+            else if(mid>0 && arr[mid]<arr[mid-1])
                 return mid-1;
-            if(arr[mid]>=arr[0])
+            else if(arr[mid]>=arr[0])
                 start = mid+1;
             else
                 end=mid-1;
