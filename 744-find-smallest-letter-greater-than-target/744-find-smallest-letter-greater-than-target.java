@@ -13,12 +13,12 @@ class Solution {
         {
             int mid = start +(end -start)/2;
             
-            if((int) letters[mid] == (int)target )
+            if(letters[mid] == target )
             {
                 ans = letters[mid+1];
                 start = mid+1;
             }
-            else if ( (int) letters[mid] <= (int)target )
+            else if ( letters[mid] <= target )
                 start = mid+1;
             else
                 end = mid-1;
