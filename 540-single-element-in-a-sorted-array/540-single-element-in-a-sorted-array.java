@@ -1,6 +1,8 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
         
+        // yee code mene swyam likha hain .... keep going
+        
         int s = 0;
         int e = nums.length-1;
         
