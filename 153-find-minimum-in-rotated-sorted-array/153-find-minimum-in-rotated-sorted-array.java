@@ -1,7 +1,7 @@
 class Solution {
     public int findMin(int[] nums) {
         
-        int pivot = peek(nums);
+         int pivot = peek(nums);
         
         if(pivot == 0)
             return nums[1];
@@ -28,10 +28,8 @@ class Solution {
             else
                 end=mid-1;
         }
-        System.out.println(start);
         return start;
         
     }
-    
     
 }
