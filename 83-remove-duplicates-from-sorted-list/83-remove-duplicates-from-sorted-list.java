@@ -14,19 +14,19 @@ class Solution {
         if( head == null )
             return null;
         
-        ListNode curr = head.next;
-        ListNode prev = head;
+        ListNode curr = head;
+        // ListNode prev = head;
         
-        while(curr != null)
+        while(curr.next != null)
         {
-            if( curr.val == prev.val)
+            if( curr.val == curr.next.val)
             {
-                prev.next = curr.next;
-                curr = curr.next;
+                // prev.next = curr.next;
+                curr.next = curr.next.next;
             }
             else
             {
-                prev = curr;
+                // prev = curr;
                 curr = curr.next;
             }
         }
