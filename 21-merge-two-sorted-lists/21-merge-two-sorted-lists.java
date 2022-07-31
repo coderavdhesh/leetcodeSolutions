@@ -10,30 +10,24 @@
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode head = new ListNode(0);
         
-        PriorityQueue<Integer> heap = new PriorityQueue<>();
+        if( list1 == null )
+            return list2;
+        if( list2 == null )
+            return list1;
         
-        while(list1 != null)
+        if( list1.val < list2.val )
         {
-            heap.offer(list1.val);
-            list1 = list1.next;
+            head = list1;
+            head.next = mergeTwoLists(list1.next, list2);
         }
-        while(list2 != null)
+        else
         {
-            heap.offer(list2.val);
-            list2 = list2.next;
+            head = list2;
+            head.next = mergeTwoLists(list1, list2.next);
         }
         
-        ListNode ans = new ListNode(-1);
-        ListNode curr = ans;
-    
-        while(!heap.isEmpty())
-        {
-            curr.next = new ListNode(heap.poll());
-            curr = curr.next;
-        }
-        ans = ans.next;
-        
-        return ans;
+        return head;
     }
 }
