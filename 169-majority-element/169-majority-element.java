@@ -3,9 +3,22 @@ class Solution {
         
         // this code is having O(N) time 
         
-        Arrays.sort(nums);
+        // morre algo
         
-        return nums[(nums.length)/2];
+        int ele = 0;
+        int cnt = 0;
         
+        for(int i=0; i< nums.length; i++)
+        {
+            if(cnt == 0)//get the element
+                ele = nums[i];
+            
+            if( ele == nums[i])
+                cnt++;
+            else
+                cnt--;
+        }
+        
+        return ele;
     }
 }
