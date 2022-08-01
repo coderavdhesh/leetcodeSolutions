@@ -34,7 +34,6 @@ class Solution {
             dummy.next = new ListNode(sum%10);
             dummy = dummy.next;
         }
-        ansNode = ansNode.next;
-        return ansNode;
+        return ansNode.next;
     }
 }
