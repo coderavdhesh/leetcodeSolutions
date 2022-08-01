@@ -29,19 +29,10 @@ class Solution {
                 l2 = l2.next;
             }
             sum += carry;
+            carry = sum/10;
             
-            if(sum > 9)
-            {
-                dummy.next = new ListNode(sum%10);
-                carry = sum/10;
-                dummy = dummy.next;
-            }
-            else
-            {
-                dummy.next = new ListNode(sum);
-                carry = 0;
-                dummy = dummy.next;
-            }
+            dummy.next = new ListNode(sum%10);
+            dummy = dummy.next;
         }
         ansNode = ansNode.next;
         return ansNode;
