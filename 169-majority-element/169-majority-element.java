@@ -1,19 +1,11 @@
 class Solution {
     public int majorityElement(int[] nums) {
         
-        int ans = 0;
+        // this code is having O(N) time 
         
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Arrays.sort(nums);
         
-        for(int num : nums)
-        {
-            map.put(num,map.get(num) == null ? 1 : map.get(num)+1);
-            
-            if(map.get(num) > nums.length/2)
-                ans = num;
-        }
-        
-        return ans;
+        return nums[(nums.length)/2];
         
     }
 }
