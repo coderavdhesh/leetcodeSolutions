@@ -15,17 +15,18 @@ public class Solution {
         HashMap<ListNode, Integer> map = new HashMap<>();
         
         int index = 0;
+        ListNode cur = head;
         
-        while(head != null)
+        while(cur != null)
         {
-            if( !map.containsKey(head) )
+            if( !map.containsKey(cur) )
             {
-                map.put(head, index);
+                map.put(cur, index);
                 index++;
-                head = head.next;
+                cur = cur.next;
             }
             else
-                return head;
+                return cur;
         }
         
         return null;
