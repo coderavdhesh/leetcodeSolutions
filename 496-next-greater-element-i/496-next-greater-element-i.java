@@ -6,8 +6,6 @@ class Solution {
         for(int i=0 ; i< nums2.length; i++)
             indices.put( nums2[i], i);
         
-        System.out.println(indices);
-        
         int[] greaters = new int[nums2.length];
         
         Stack<Integer> stack = new Stack<>();
@@ -32,8 +30,6 @@ class Solution {
             }
             stack.push(nums2[i]);
         }
-        
-        System.out.println(Arrays.toString(greaters));
         
         // now traverse the num1 to get the answer
         
