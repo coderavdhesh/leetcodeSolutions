@@ -23,10 +23,11 @@ public class Solution {
             {
                 map.put(cur, index);
                 index++;
-                cur = cur.next;
             }
             else
                 return cur;
+            
+            cur = cur.next;
         }
         
         return null;
