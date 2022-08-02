@@ -16,11 +16,8 @@ public class Solution {
         
         int index = 0;
         
-        while(true)
+        while(head != null)
         {
-            if(head == null)
-                return null;
-            
             if( !map.containsKey(head) )
             {
                 map.put(head, index);
@@ -30,5 +27,7 @@ public class Solution {
             else
                 return head;
         }
+        
+        return null;
     }
 }
