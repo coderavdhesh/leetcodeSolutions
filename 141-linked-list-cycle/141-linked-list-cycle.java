@@ -12,21 +12,17 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         
-        HashSet<ListNode> container = new HashSet<>();
+        ListNode slow = head;
+        ListNode fast = head;
         
-        ListNode dummy = head;
-        
-        while(dummy != null)
+        while(fast != null && fast.next != null)
         {
-            if( !container.contains(dummy) )
-                container.add(dummy);
-            else
-                return true;
+            slow = slow.next;
+            fast = fast.next.next;
             
-            dummy = dummy.next;
+            if(slow == fast)
+                return true;
         }
-        
         return false;
-        
     }
 }
