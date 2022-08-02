@@ -13,43 +13,24 @@ class Solution {
         
         if(head == null)
             return null;
+       
+        ListNode dummy = new ListNode(0, head);
+        ListNode prev = dummy;
         
-        HashSet<Integer> duplicates = new HashSet<>();
-        
-        ListNode cur = head;
-        while(cur.next != null)
+        while( head != null)
         {
-            if(cur.val == cur.next.val)
+            if(head.next != null && head.val == head.next.val)
             {
-                duplicates.add(cur.val);
-                cur.next = cur.next.next;
+                while(head.next != null && head.val == head.next.val)
+                    head = head.next;
+                prev.next = head.next;
             }
             else
             {
-                cur = cur.next;
+                prev = prev.next;
             }
-        }
-        
-        
-        System.out.print(duplicates);
-    
-        while(head != null && duplicates.contains(head.val))
-        {
             head = head.next;
         }
-        
-        if(head == null)
-            return null;
-        
-        cur = head;
-        
-        while( cur.next != null)
-        {
-            if(duplicates.contains(cur.next.val))
-                cur.next = cur.next.next;
-            else
-                cur = cur.next;
-        }
-        return head;
+        return dummy.next;
     }
 }
