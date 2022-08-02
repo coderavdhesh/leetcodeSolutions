@@ -11,18 +11,23 @@
 class Solution {
     public ListNode mergeNodes(ListNode head) {
         
-        ListNode ansNode = new ListNode(0);
-        ListNode ans = ansNode;
         
         ListNode cur = head;
+        ListNode prev= head;
         int sum =0;
         
         while( cur != null )
         {
-            if(cur.val == 0)
+            if(cur.val == 0 && cur != prev)
             {
-                ans.next = new ListNode(sum);
-                ans = ans.next;
+                prev.val = sum;
+                
+                if(cur.next == null)
+                    prev.next = null;
+                else
+                    prev.next = cur;
+                
+                prev = cur;
                 sum = 0;
             }
             else
@@ -31,6 +36,6 @@ class Solution {
             }
             cur = cur.next;
         }
-        return ansNode.next.next;
+        return head;
     }
 }
