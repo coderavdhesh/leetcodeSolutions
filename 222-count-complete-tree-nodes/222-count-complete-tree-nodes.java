@@ -22,8 +22,8 @@ class Solution {
         
         
         countNodes(root.left);
-        countNodes(root.right);
         count++;
+        countNodes(root.right);
         
         return count;
     }
