@@ -20,9 +20,10 @@ class Solution {
         if(root == null)
             return 0;
         
-        count++;
+        
         countNodes(root.left);
         countNodes(root.right);
+        count++;
         
         return count;
     }
