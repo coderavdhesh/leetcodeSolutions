@@ -16,20 +16,14 @@
 class Solution {
     public boolean isUnivalTree(TreeNode root) {
         
-        HashSet<Integer> set = new HashSet<>();
-        elements(root, set);
-        
-        return (set.size() == 1);
-        
-    }
-    public void elements(TreeNode root, HashSet<Integer> set ){
-        
         if(root == null)
-            return;
+            return true;
         
-        set.add(root.val);
-        elements(root.left, set);
-        elements(root.right, set);
+        if(root.left != null && root.left.val != root.val)
+            return false;
+        if(root.right != null && root.right.val != root.val)
+            return false;
         
+       return isUnivalTree(root.left) &&  isUnivalTree(root.right);
     }
 }
