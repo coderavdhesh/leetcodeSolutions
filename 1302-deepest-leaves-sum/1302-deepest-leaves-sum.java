@@ -33,9 +33,7 @@ class Solution {
             return;
         
         if( curLevel == dpth)
-        {
             list.add(root.val);
-        }
         
         levelSum(root.left,curLevel+1, dpth, list);
         levelSum(root.right,curLevel+1, dpth, list);
