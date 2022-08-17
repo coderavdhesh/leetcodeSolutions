@@ -17,29 +17,29 @@ class Solution {
     public int deepestLeavesSum(TreeNode root) {
         
         int dpth = depth(root);
-        
-        // now level order treversal
-        
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        int level = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+        levelSum(root, 1, dpth,list);
         int sum = 0;
         
-        while(!q.isEmpty()){
-            level++;
-            int size = q.size();
-            while(size-- > 0){
-                TreeNode curr = q.poll();
-                if(level == dpth){
-                    sum += curr.val;
-                }
-                if(curr.left != null)
-                    q.add(curr.left);
-                if(curr.right != null)
-                    q.add(curr.right);
-            }
+        for( int i =0 ; i< list.size(); i++){
+            sum += list.get(i);
         }
+        
         return sum;
+    }
+    public void levelSum(TreeNode root,int curLevel, int dpth, ArrayList<Integer> list){
+        
+        if(root == null)
+            return;
+        
+        if( curLevel == dpth)
+        {
+            list.add(root.val);
+        }
+        
+        levelSum(root.left,curLevel+1, dpth, list);
+        levelSum(root.right,curLevel+1, dpth, list);
+        
     }
     public int depth(TreeNode tree){
         if(tree == null)
