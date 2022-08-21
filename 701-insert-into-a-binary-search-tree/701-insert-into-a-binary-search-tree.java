@@ -19,7 +19,7 @@ class Solution {
         if(root == null)
         {
             root = new TreeNode(val);
-            return root;
+            // return root;
         }
         
         TreeNode curr = root;
