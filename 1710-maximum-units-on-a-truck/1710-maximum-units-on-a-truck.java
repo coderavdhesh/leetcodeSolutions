@@ -10,8 +10,8 @@ class Solution {
             ans += temp*a[1];
             truckSize -= temp;
             
-            if(truckSize == 0)
-                return ans;
+            // if(truckSize == 0)
+            //     return ans;
         }
         
         return ans;
