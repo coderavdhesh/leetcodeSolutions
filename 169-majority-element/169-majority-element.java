@@ -1,22 +1,18 @@
 class Solution {
     public int majorityElement(int[] nums) {
         
-        // this code is having O(N) time 
-        
-        // morre algo
-        
         int ele = 0;
-        int cnt = 0;
+        int count = 0;
         
-        for(int i=0; i< nums.length; i++)
-        {
-            if(cnt == 0)//get the element
-                ele = nums[i];
+        for(int n : nums){
             
-            if( ele == nums[i])
-                cnt++;
+            if(count == 0)
+                ele = n;
+            
+            if(ele == n)
+                count++;
             else
-                cnt--;
+                count--;
         }
         
         return ele;
