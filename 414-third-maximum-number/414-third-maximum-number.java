@@ -1,34 +1,28 @@
 class Solution {
     public int thirdMax(int[] nums) {
         
+        long min1 = Long.MIN_VALUE;
+        long min2 = Long.MIN_VALUE;
+        long min3 = Long.MIN_VALUE;
         
-//         Arrays.sort(nums);
-        
-//         HashMap<Integer, Integer> map = new HashMap<>();
-        
-//         for(int num : nums)
-//         {
-//             map.put(num, map.get(num)==null ? 1 : map.get(num) +1);
-//         }
-        
-        
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
-        
-        for(int num : nums)
-        {
-            if(!maxHeap.contains(num))
-                maxHeap.offer(num);
-            
-            if(maxHeap.size() > 3)
-                maxHeap.poll();
+        for(int n : nums){
+            if(min3 < n)
+            {
+                min1 = min2;
+                min2 = min3;
+                min3 = n;
+            }
+            else if(min3 > n && min2 <n)
+            {
+                min1 = min2;
+                min2 = n;
+            }
+            else if(min2 > n && min1< n)
+            {
+                min1 = n;
+            }
         }
         
-        if(maxHeap.size()==2 )
-            maxHeap.poll();
-        
-        return maxHeap.poll();
-        
-        
-        
+        return min1 == Long.MIN_VALUE ? (int)min3 : (int)min1; 
     }
 }
