@@ -17,7 +17,7 @@ class Solution {
                 else
                 {
                     int score = 0;
-                    while( stack.peek() != -1)
+                    while( !stack.isEmpty() && stack.peek() != -1)
                         score += stack.pop();
                     stack.pop(); // pop out -1 of '('
                     stack.push(2*score);
