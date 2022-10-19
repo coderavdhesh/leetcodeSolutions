@@ -35,17 +35,20 @@ class GFG
 class Solution{
     ArrayList<Integer> subsetSums(ArrayList<Integer> arr, int N){
         // code here
+        int len = arr.size();
         ArrayList<Integer> ans = new ArrayList<>();
         List<List<Integer>> list = new ArrayList<>();
-        list.add(new ArrayList<>());
         
-        for(int n : arr){
-            int size = list.size();
-            for(int i=0; i< size; i++){
-                List<Integer> subList = new ArrayList<>(list.get(i));
-                subList.add(n);
-                list.add(subList);
+        for(int i =0; i< (1<<len); i++){
+            ArrayList<Integer> sub =new ArrayList<>();
+            
+            for(int j = 0; j< len ; j++){
+                if((i & (1<<j)) != 0 )
+                {
+                    sub.add(arr.get(j));
+                }
             }
+            list.add(sub);
         }
         
         for(List<Integer> ls : list){
